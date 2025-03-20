@@ -3,3 +3,14 @@
 #macro LEFT 2
 #macro DOWN 3
 
+enum OBJECTS {
+    NOTHING,
+    BLUEDOOR,
+    LOCKED_BLUEDOOR,
+    BLUEKEY,
+    REDKEY,
+    ASIN, 
+    BASEMENTKEY,
+    BSKEY,
+    BSDOOR,
+}
