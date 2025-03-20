@@ -13,4 +13,5 @@ enum OBJECTS {
     BASEMENTKEY,
     BSKEY,
     BSDOOR,
+     LOCKED_BSDOOR,
 }

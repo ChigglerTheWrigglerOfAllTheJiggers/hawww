@@ -11,7 +11,6 @@ interactKeyPressed = keyboard_check_pressed(vk_space);
 var _hor = right_key - left_key; // 1 for right, -1 for left
 var _ver = down_key - up_key; // 1 for down, -1 for up
 
-
 // Calculate speed
 xspd = _hor * move_speed;
 yspd = _ver * move_speed;
@@ -78,6 +77,21 @@ if (instance != noone) {
             instance_destroy(instance);
             break;
         case OBJECTS.LOCKED_BLUEDOOR: 
+            if (key_count > 0) {
+                key_count -= 1;
+                audio_play_sound(Soundopendoor, 1, false);
+                instance_destroy(instance);
+            }
+            break;
+                case OBJECTS.BSKEY:
+            key_count += 1;
+            instance_destroy(instance);
+            audio_play_sound(Soundpickup, 1, false);
+            break;
+        case OBJECTS.BSDOOR: 
+            instance_destroy(instance);
+            break;
+        case OBJECTS.LOCKED_BSDOOR: 
             if (key_count > 0) {
                 key_count -= 1;
                 audio_play_sound(Soundopendoor, 1, false);
